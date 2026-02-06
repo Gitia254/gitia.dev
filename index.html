@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+  <title>Gitia.dev | Creative Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+ <link rel="stylesheet" href="css/main.css">
+ <link rel="icon" href="assets/letter-g.png">
+ 
+</head>
+<body>
+
+<div id="progress-container"><div id="progress-bar"></div></div>
+<div class="cursor"></div>
+<div class="cursor-ring"></div>
+
+<nav>
+  <div class="logo">GITIA<span>.DEV</span></div>
+  <div>
+    <a href="#about">// About</a>
+    <a href="#projects">// Portfolio</a>
+    <a href="#contact">// Connect</a>
+  </div>
+</nav>
+
+<div id="main-container">
+  <section class="hero-layer">
+    <span class="section-label glitch-glow" style="text-align: center;">Status: Operational</span>
+    
+    <h1 class="gradient">INTERFACE<br>DESIGNER</h1> <br>
+    <p style="text-align: center;">Crafting Digital Life-Forms</p>
+  </section>
+
+  <div class="content-layer" id="reveal-layer">
+    
+    <section id="about">
+      <span class="section-label">// 01. Philosophy</span>
+      <h2 style="font-size: clamp(30px, 5vw, 60px); max-width: 900px; line-height: 1.1; margin-bottom: 40px;">
+        The future isn't built with code alone. It's built with <span style="color:var(--accent)">Human Emotion</span> amplified by machines.
+      </h2>
+      <div class="skills-container">
+        <div class="skill-tag">Webgl</div>
+        <div class="skill-tag">React.js</div>
+        <div class="skill-tag">Generative AI</div>
+        <div class="skill-tag">Cyber-Aesthetics</div>
+        <div class="skill-tag">GLSL</div>
+      </div>
+    </section>
+
+    <h3><span style="color:var(--accent)">Some of the projects</span> I've worked on </h3>
+
+    <section id="projects">
+      <span class="section-label">// 02. Archives</span>
+      <div class="projects-grid">
+        <div class="card" data-project="Streaming UI" data-img= "assets/stream.png">
+          <h3>Experimental Streaming Web experience</h3>
+          <p>Cinematic content delivery system with spatial navigation.</p>
+        </div>
+        <div class="card" data-project="Storytelling" data-img="assets/motion.png">
+          <h3>Storytellling through Motion Graphics</h3>
+          <p>Experimental narrative engine built for immersive web storytelling.</p>
+        </div>
+        <div class="card" data-project="Zen Focus" data-img="assets/prod.png">
+          <h3>Minimalism is key</h3>
+          <p>Minimalist productivity layer for hyper-focused deep work sessions.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="align-items: center; text-align: center;">
+        <span class="section-label">// 03. Uplink</span>
+        <h2 style="font-size: clamp(40px, 8vw, 100px); letter-spacing: -4px;">START PROJECT?</h2>
+        <a href="mailto:arnoldgitia3@gmail.com" class="skill-tag" style="margin-top: 40px; border-radius: 50PX; padding: 20px 40px; font-size: 20px; color: var(--accent); border-color: var(--accent);">REACH OUT VIA EMAIL</a> <br><br>
+        <div class="social-links"> <br><br>
+    <a href="https://instagram.com/quavoliciouz" target="_blank"><img src="assets/insta.png" alt="" style="width: 50px;"></a>
+    <a href="https://reddit.com/" target="_blank" style="margin-left: 20px;"><img src="assets/reddit.png" alt="" style="width: 50px;"></a>
+    <a href="https://github.com/gitia254" target="_blank" style="margin-left: 20px;"><img src="assets/github.png" alt="" style="width: 50px;"></a>
+    <a href="https://discord.com/users/quavoliciouz" target="_blank" style="margin-left: 20px;"><img src="assets/discord.png" alt="" style="width: 50px;"></a>
+  </div>
+    </section>
+
+    <footer style="padding: 60px 10% 40px; border-top: 1px solid #111; display: flex; justify-content: space-between; align-items: center; color: #444; font-size: 10px; letter-spacing: 2px;">
+  <div>NAIROBI, KENYA</div>
+  
+  
+
+  <div>© GITIA 2026 // ALL RIGHTS RESERVED</div>
+</footer>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <div class="close-btn" id="close">✕</div>
+    <div class="modal-header-img">
+        <img id="modal-img" src="" alt="Neural Interface Link">
+    </div>
+    <div class="modal-body">
+      <h4 style="color:var(--accent); letter-spacing: 5px; text-transform: uppercase; font-size: 12px;">Data Link Established</h4>
+      <h2 id="modal-title" style="font-size: 50px; letter-spacing: -2px; margin: 10px 0 30px;"></h2>
+      <p style="color: #888; line-height: 1.8; font-size: 20px; max-width: 700px;">
+        This project pushed the boundaries of modern browser capabilities. By integrating custom shaders and neural assets, we achieved a 60FPS fluid experience that feels more like an OS than a website.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script>
+/* 1. Diagonal Reveal Logic */
+const revealLayer = document.getElementById('reveal-layer');
+const progressBar = document.getElementById('progress-bar');
+
+window.addEventListener('scroll', () => {
+  const scrollPos = window.scrollY;
+  const windowHeight = window.innerHeight;
+  
+  // Wipe progress
+  let progress = Math.min(scrollPos / windowHeight, 1) * 100;
+  
+  // Clip path points for the diagonal sweep
+  const rightEdge = 100 - progress;
+  const leftEdge = Math.max(0, 100 - (progress * 1.5)); 
+  revealLayer.style.clipPath = `polygon(${leftEdge}% 0%, 100% 0%, 100% 100%, ${rightEdge}% 100%)`;
+
+  // Global Progress bar
+  const totalHeight = document.body.scrollHeight - windowHeight;
+  const globalProgress = (scrollPos / totalHeight) * 100;
+  progressBar.style.width = globalProgress + '%';
+});
+
+/* 2. Custom Cursor */
+const cursor = document.querySelector('.cursor');
+const ring = document.querySelector('.cursor-ring');
+
+document.addEventListener('mousemove', e => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+  ring.style.left = e.clientX + 'px';
+  ring.style.top = e.clientY + 'px';
+});
+
+document.querySelectorAll('a, .card, .close-btn, .skill-tag').forEach(el => {
+  el.addEventListener('mouseenter', () => ring.classList.add('cursor-grow'));
+  el.addEventListener('mouseleave', () => ring.classList.remove('cursor-grow'));
+});
+
+/* 3. Modal Logic */
+const modal = document.getElementById('modal');
+const modalTitle = document.getElementById('modal-title');
+const modalImg = document.getElementById('modal-img');
+
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('click', () => {
+    modal.classList.add('active');
+    modalTitle.textContent = card.dataset.project;
+    modalImg.src = card.dataset.img;
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+const closeModal = () => {
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+};
+document.getElementById('close').onclick = closeModal;
+window.onclick = e => { if(e.target === modal) closeModal(); };
+</script>
+
+</body>
+</html>
